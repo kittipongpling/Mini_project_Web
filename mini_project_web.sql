@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2020 at 04:26 PM
+-- Generation Time: Feb 02, 2020 at 06:40 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -56,6 +56,29 @@ INSERT INTO `total` (`id`, `fname`, `lname`, `num`, `files`) VALUES
 (35, 'name', 'lname', 0, './members/3images (1).jfif'),
 (36, 'name', 'lname', 0, './members/3images (1).jfif'),
 (37, 'name', 'lname', 0, './members/3im.jfif');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `tell` varchar(100) NOT NULL,
+  `Userlevel` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`fname`, `lname`, `email`, `password`, `tell`, `Userlevel`) VALUES
+('กิตติพงษ์', 'ปลิงกระโทก', 'kittipong_pling@gmail.com', '1234', '0848283681', 'A'),
+('ลองระบบ', 'ลองดูเฉยๆ', 'mem@gmail.com', '1234', '04444', 'M');
 
 --
 -- Indexes for dumped tables
