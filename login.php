@@ -1,99 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+<?php
+// $conn = new mysqli("127.0.0.1", "root", "", "mini_project_web");
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-    
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-
-<h2>Login Form</h2>
-
-<form action="./view/" method="post">
-  <div class="imgcontainer">
-    <img style="width:15%;height:20%;" src="https://image.shutterstock.com/image-vector/shield-letter-s-logosafesecureprotection-logomodern-260nw-633031571.jpg" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
-
-</body>
-</html>
+session_start();
+        if(isset($_POST['Username'])){
+				//connection
+                  include("./connect/BaseModel.php");
+				//รับค่า user & password
+                  $Username = $_POST['Username'];
+                  $Password = $_POST['Password'];
+				//query 
+                  // $sql="SELECT * FROM User Where Username='".$Username."' and Password='".$Password."' ";
+ 
+                  $sql="SELECT * FROM User Where email='$Username' AND password='$Password' ";
+ 
+                  $result = mysqli_query($conn,$sql);
+				
+                  if(mysqli_num_rows($result)==1){
+ 
+                      $row = mysqli_fetch_array($result);
+                      // $_SESSION["UserID"] = $row["ID"];
+                      $_SESSION["User"] = $row["fname"]." ".$row["lname"];
+                      $_SESSION["Userlevel"] = $row["Userlevel"];
+ 
+                      if($_SESSION["Userlevel"]=="A"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
+ 
+                        Header("Location: Mini_project_Web/../test/show.php");
+ 
+                      }
+ 
+                      if ($_SESSION["Userlevel"]=="M"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
+ 
+                        Header("Location: Mini_project_Web/../test/user.php");
+ 
+                      }
+ 
+                  }else{
+                    
+                    echo "<script>";
+                        echo "alert(\" user หรือ  password ไม่ถูกต้อง\");"; 
+                        echo "window.history.back()";
+                    echo "</script>";
+ 
+                  }
+ 
+        }else{
+ 
+ 
+            //  Header("Location: index.php"); //user & password incorrect back to login again
+ 
+        }
+?>

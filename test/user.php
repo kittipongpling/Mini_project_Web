@@ -110,7 +110,7 @@ body {
 <h3 align="right">ผู้ดูแลระบบ</h3>
 </div> -->
 <br>
-<button   value="เพิ่มสินค้า"><a href="form.php">เพิ่มสินค้า</a></button>
+
 <div align="center">
 <h1>กรุณาเลือกสินค้า ที่ท่านต้องการ</h1>
 
@@ -123,7 +123,7 @@ body {
     
       <img width="200px" height="180px" src="<?php echo $data['files']; ?>" style="padding:10px;width:100%">
       <div align="center">
-      <button><a href="edit.php?id=<?php echo $data['id'] ?>">ดูข้อมูล</a></button>
+      <button><a href="./user/edit.php?id=<?php echo $data['id'] ?>">ดูข้อมูล</a></button>
       <input  type="button" require value="สั่งซื้อ" name="rich">
       </div>
      

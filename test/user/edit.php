@@ -1,6 +1,6 @@
 <?php
 //1. เชื่อมต่อ database: 
-include('../connect/BaseModel.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('./../../connect/BaseModel.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 //ตรวจสอบถ้าว่างให้เด้งไปหน้าหลัก
 if($_GET["id"]==''){ 
 echo "<script type='text/javascript'>"; 
@@ -33,17 +33,15 @@ foreach($result as $data){
 <div class="collapse" id="upload_avatar">
     <div class="card card-body">
         <form enctype="multipart/form-data" action="./update_now.php" method="post">
-            <p class="text-left">Upload Avatar:</p>
+            <p class="text-left">SHOW Data : </p>
             <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
             <input type="text" name="name" require value="<?php echo $data['fname']; ?>"><br>
 <input type="text" name="lname" require value="<?php echo $data['lname']; ?>"><br>
 <input type="text" name="rich" require value="<?php echo $data['num']; ?>"><br>
-            <input name="image" type="file"  /><br>
-            <button class="form-control mr-sm-2 btn btn-outline-success my-2 my-sm-0" type="submit" name="avatar_upload" aria-controls="collapse_upload_avatar">
-                แก้ไข
-            </button>
-           <button ><a href="./show.php">กลับ</a></button>
+            
+            
+           <button ><a href="../user.php">กลับ</a></button>
         </form>
     </div>
 </div>
