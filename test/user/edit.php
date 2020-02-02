@@ -5,7 +5,7 @@ include('./../../connect/BaseModel.php');  //ไฟล์เชื่อมต�
 if($_GET["id"]==''){ 
 echo "<script type='text/javascript'>"; 
 echo "alert('Error Contact Admin !!');"; 
-echo "window.location = 'showmember.php'; "; 
+echo "window.location = './../../index.php'; "; 
 echo "</script>"; 
 }
  
