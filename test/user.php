@@ -1,6 +1,13 @@
-<?php session_start();?>
+<?php session_start();
+// if($_GET["id"]==''){ 
+//   echo "<script type='text/javascript'>"; 
+//   echo "alert('กรุณา login เพื่อเข้าระบบ');"; 
+//   echo "window.location = '../index.php'; "; 
+//   echo "</script>"; 
+//   }
+?>
 <?php
-$conn = new mysqli("127.0.0.1", "root", "", "mini_project_web");
+include('../connect/BaseModel.php');
 $sql = "SELECT * FROM total";
 $result = $conn->query($sql);
 

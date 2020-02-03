@@ -17,6 +17,7 @@
 /* ---------- GENERAL ---------- */
  * {
 	 box-sizing: inherit;
+	 
 }
  html {
 	 box-sizing: border-box;
@@ -119,6 +120,7 @@
           <p><input type="password" id="Password" name="Password" placeholder="password"></p>
 
           <p><input type="submit" value="Sign In"></p>
+          <p><button><a href="./register.php">Register</a></button></p>
 
         </fieldset>
 

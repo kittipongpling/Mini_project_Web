@@ -1,6 +1,13 @@
-<?php session_start();?>
+<?php session_start();
+// if($_GET["id"]==''){ 
+//   echo "<script type='text/javascript'>"; 
+//   echo "alert('กรุณา login เพื่อเข้าระบบ');"; 
+//   echo "window.location = '../index.php'; "; 
+//   echo "</script>"; 
+//   }
+?>
 <?php
-$conn = new mysqli("127.0.0.1", "root", "", "mini_project_web");
+include('../connect/BaseModel.php');
 $sql = "SELECT * FROM total";
 $result = $conn->query($sql);
 
@@ -92,15 +99,18 @@ body {
 .tae{
   height:50px;
 }
+.filter{
+  filter: drop-shadow(10px 10px 10px gray);
+}
 </style>
 </head>
 <body>
 
 <div class="tae">
 <div  class="w3-bar w3-border w3-card-4 w3-light-grey tae">
-  <a href="#" class="w3-bar-item w3-button"><img width="35px" height="35px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8fC_XNa9v_Z3z7TsGbWyTfE8orU6ga87a4aVHA68GJpzZUPIU" alt=""></a>
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">ร้านค้าออนไลน์</a>
+  <a href="#" class="w3-bar-item w3-button">ติดต่อ/โฆษณา</a>
+  <a href="#" class="w3-bar-item w3-button">ประชาสัมพันธ์</a>
   <a  href="#" class="w3-bar-item w3-button w3-right"><?php print_r($_SESSION['User']);?> <?php print_r($_SESSION['Userlevel']);?></a>
   <a  href="./../index.php" class="w3-bar-item w3-button w3-right">ออกจากระบบ</a>
 </div>
@@ -118,15 +128,17 @@ body {
 <?php foreach($result as $data){
   // echo $data['id']
  ?>
-    <div style="width:15%;height:20%;" class="w3-col">
-   <!-- <?php echo $tae['fname']; ?> -->
-    
-      <img width="200px" height="180px" src="<?php echo $data['files']; ?>" style="padding:10px;width:100%">
+    <div style="width:20%;height:100%;" class="w3-col">
+   <!-- <?php echo $data['fname']; ?> -->
+    <div class="filter">
+      <img width="200px" height="180px" src="<?php echo $data['files']; ?>" style="padding:10px 10px;width:100%;">
       <div align="center">
       <button><a href="edit.php?id=<?php echo $data['id'] ?>">ดูข้อมูล</a></button>
       <input  type="button" require value="สั่งซื้อ" name="rich">
+      <hr>
+      <hr>
       </div>
-     
+      </div>
     </div>
     <?php }?>
      

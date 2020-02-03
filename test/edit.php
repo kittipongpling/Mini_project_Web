@@ -44,6 +44,7 @@ foreach($result as $data){
                 แก้ไข
             </button>
            <button ><a href="./show.php">กลับ</a></button>
+           <button ><a href="./delete_admin.php?id=<?php echo $data['id'] ?>">ลบข้อมูล</a></button>
         </form>
     </div>
 </div>

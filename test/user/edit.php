@@ -4,7 +4,7 @@ include('./../../connect/BaseModel.php');  //ไฟล์เชื่อมต�
 //ตรวจสอบถ้าว่างให้เด้งไปหน้าหลัก
 if($_GET["id"]==''){ 
 echo "<script type='text/javascript'>"; 
-echo "alert('Error Contact Admin !!');"; 
+echo "alert('กรุณา login เพื่อเข้าระบบ');"; 
 echo "window.location = './../../index.php'; "; 
 echo "</script>"; 
 }
