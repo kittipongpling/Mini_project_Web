@@ -95,6 +95,11 @@ body {
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
+
+  position: fixed;
+  
+  bottom: 0;
+  width: 84%;
 }
 .tae{
   height:50px;
@@ -131,7 +136,8 @@ body {
       <img width="200px" height="180px" src="<?php echo $data['files']; ?>" style="padding:10px;width:100%">
       <div align="center">
       <button><a href="./user/edit.php?id=<?php echo $data['id'] ?>">ดูข้อมูล</a></button>
-      <input  type="button" require value="สั่งซื้อ" name="rich">
+      <button><a href="./order.php?id=<?php echo $data['id'] ?>">สั่งซื้อ</a></button>
+      <!-- <input  type="button" require value="สั่งซื้อ" name="rich"> -->
       </div>
      
     </div>
@@ -142,7 +148,7 @@ body {
 
   </div>
   <hr>
-  <div  class="footer">
+  <div   class="footer">
   <p>Miniproject Web Programming Grop 5</p>
 </div>
 </body>

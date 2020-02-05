@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Sriracha&display=swap');
+*{
+    font-family: 'Indie Flower', cursive;
+font-family: 'Sriracha', cursive;
+}
+body,p,h2{
+    font-family: 'Indie Flower', cursive;
+font-family: 'Sriracha', cursive;
+}
+.mac-title h2 {
+    font-size: 3rem;
+    font-weight: 300;
+}
+.mac-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+.mac-grid-items {
+    background: #eee;
+    padding-bottom: 2rem;
+    transition: .3s;
+    cursor: pointer;
+}
+.container {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+.mac-items-info  {
+    margin-top: 1.5rem;
+}
+.mac{
+        padding: 2rem 0;
+        text-align: center;
+        
+    }

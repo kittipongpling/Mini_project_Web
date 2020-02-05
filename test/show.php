@@ -95,12 +95,23 @@ body {
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
+
+  position: fixed;
+  
+  bottom: 0;
+  width: 84%;
 }
 .tae{
   height:50px;
 }
 .filter{
   filter: drop-shadow(10px 10px 10px gray);
+  
+}
+.lol{
+  border:1px solid #333;
+  background-color:white;
+  
 }
 </style>
 </head>
@@ -113,6 +124,7 @@ body {
   <a href="#" class="w3-bar-item w3-button">ประชาสัมพันธ์</a>
   <a  href="#" class="w3-bar-item w3-button w3-right"><?php print_r($_SESSION['User']);?> <?php print_r($_SESSION['Userlevel']);?></a>
   <a  href="./../index.php" class="w3-bar-item w3-button w3-right">ออกจากระบบ</a>
+  
 </div>
 </div>
 <!-- <div bgcolor="black">
@@ -120,34 +132,38 @@ body {
 <h3 align="right">ผู้ดูแลระบบ</h3>
 </div> -->
 <br>
-<button   value="เพิ่มสินค้า"><a href="form.php">เพิ่มสินค้า</a></button>
+<button class="w3-button w3-right"  value="เพิ่มสินค้า"><a href="form.php">เพิ่มสินค้า</a></button>
+<button class="w3-button w3-right"  value="เพิ่มสินค้า"><a href="form.php">ตรวจสอบสมาชิก</a></button>
 <div align="center">
-<h1>กรุณาเลือกสินค้า ที่ท่านต้องการ</h1>
-
+<h1>ตรวจเช็คสินค้า</h1>
+<hr>
 <div class="w3-row-padding">
 <?php foreach($result as $data){
   // echo $data['id']
  ?>
-    <div style="width:20%;height:100%;" class="w3-col">
-   <!-- <?php echo $data['fname']; ?> -->
-    <div class="filter">
-      <img width="200px" height="180px" src="<?php echo $data['files']; ?>" style="padding:10px 10px;width:100%;">
-      <div align="center">
-      <button><a href="edit.php?id=<?php echo $data['id'] ?>">ดูข้อมูล</a></button>
-      <input  type="button" require value="สั่งซื้อ" name="rich">
-      <hr>
-      <hr>
+ 
+          <div style="width:20%;height:100%;" class="w3-col">
+        <?php echo $data['fname']; ?>
+          <div class="filter">
+            <img width="200px" height="180px" src="<?php echo $data['files']; ?>" style="padding:10px 40px;width:100%;">
+            <div align="center">
+            <button><a href="edit.php?id=<?php echo $data['id'] ?>">ดูข้อมูล</a></button>
+            <!-- <input  type="button" require value="สั่งซื้อ" name="rich">
+            -->
+            
       </div>
       </div>
     </div>
+    
     <?php }?>
-     
+    
+      <hr>
   </div>
  
 
   </div>
   <hr>
-  <div  class="footer">
+  <div   class="footer">
   <p>Miniproject Web Programming Grop 5</p>
 </div>
 </body>

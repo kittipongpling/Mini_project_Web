@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2020 at 06:40 PM
+-- Generation Time: Feb 05, 2020 at 07:45 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -30,9 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `total` (
   `id` int(5) NOT NULL,
-  `fname` varchar(10) NOT NULL,
-  `lname` varchar(10) NOT NULL,
-  `num` int(3) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `price` int(3) NOT NULL,
   `files` varchar(100) NOT NULL COMMENT 'รูป'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -40,22 +39,10 @@ CREATE TABLE `total` (
 -- Dumping data for table `total`
 --
 
-INSERT INTO `total` (`id`, `fname`, `lname`, `num`, `files`) VALUES
-(23, 'kkk', 'kkk', 100, '123456'),
-(24, 'เต้', '111111', 0, './members/sm_5aba147bcacf2.png'),
-(25, '', '', 0, './members/images.jfif'),
-(26, '', '', 0, './members/images.jfif'),
-(27, '', '', 0, './members/3images (2).jfif'),
-(28, '', '', 0, './members/3images (1).jfif'),
-(29, '', '', 0, './members/3images (3).jfif'),
-(30, '', '', 0, './members/3images (3).jfif'),
-(31, '', '', 0, './members/3images (3).jfif'),
-(32, 'Iphon 10', 'over', 4000, './members/3images.jfif'),
-(33, 'Iphon 10', 'over', 4000, './members/3images.jfif'),
-(34, 'ซัมซุง', 'โทรรสับ', 10000, './members/3images (1).jfif'),
-(35, 'name', 'lname', 0, './members/3images (1).jfif'),
-(36, 'name', 'lname', 0, './members/3images (1).jfif'),
-(37, 'name', 'lname', 0, './members/3im.jfif');
+INSERT INTO `total` (`id`, `fname`, `price`, `files`) VALUES
+(58, 'apple iphone', 10090, './../../photo/3c5524bf28336411bde1695a91d94cca2.jfif'),
+(61, 'OPPO A5 20', 4900, './../../photo/3oppo_a5_2020-_black_6.png'),
+(62, 'VIVO V19', 4900, './../../photo/3vivo-1_y19-magnetic-black_2.png');
 
 -- --------------------------------------------------------
 
@@ -66,19 +53,22 @@ INSERT INTO `total` (`id`, `fname`, `lname`, `num`, `files`) VALUES
 CREATE TABLE `user` (
   `fname` varchar(100) NOT NULL,
   `lname` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `tell` varchar(100) NOT NULL,
-  `Userlevel` varchar(10) NOT NULL
+  `Userlevel` varchar(10) NOT NULL,
+  `id` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`fname`, `lname`, `email`, `password`, `tell`, `Userlevel`) VALUES
-('กิตติพงษ์', 'ปลิงกระโทก', 'kittipong_pling@gmail.com', '1234', '0848283681', 'A'),
-('ลองระบบ', 'ลองดูเฉยๆ', 'mem@gmail.com', '1234', '04444', 'M');
+INSERT INTO `user` (`fname`, `lname`, `username`, `password`, `tell`, `Userlevel`, `id`) VALUES
+('กิตติพงษ์', 'ปลิงกระโทก', 'admin', 'admin', '0848283681', 'A', 1),
+('ddd', 'ddd', 'ddd', 'ddd', 'ddd', 'M', 4),
+('mos', 'pling', 'mos@gmail.com', '1234', '08999999', 'M', 5),
+('กิตติพงษ์', 'ปลิงกระโทก', 'aaa', 'aaa', '', 'M', 6);
 
 --
 -- Indexes for dumped tables
@@ -91,6 +81,12 @@ ALTER TABLE `total`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -98,7 +94,13 @@ ALTER TABLE `total`
 -- AUTO_INCREMENT for table `total`
 --
 ALTER TABLE `total`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

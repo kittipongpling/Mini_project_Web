@@ -11,7 +11,7 @@ echo "</script>";
  
 //รับค่าไอดีที่จะแก้ไข
 $id = mysqli_real_escape_string($conn,$_GET['id']);
- 
+
 //2. query ข้อมูลจากตาราง: 
 // SELECT * FROM `total` WHERE `id`='23'
 $sql = "SELECT * FROM total WHERE id='$id' ";

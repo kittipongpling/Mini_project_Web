@@ -3,104 +3,122 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
- @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
-/* ---------- FONTAWESOME ---------- */
-/* ---------- https://fortawesome.github.com/Font-Awesome/ ---------- */
-/* ---------- http://weloveiconfonts.com/ ---------- */
-/* ---------- ERIC MEYER'S RESET CSS ---------- */
-/* ---------- https://meyerweb.com/eric/tools/css/reset/ ---------- */
-/* ---------- FONTAWESOME ---------- */
- [class*="fontawesome-"]:before {
-	 font-family: 'FontAwesome', sans-serif;
-}
-/* ---------- GENERAL ---------- */
- * {
-	 box-sizing: inherit;
-	 
-}
- html {
-	 box-sizing: border-box;
-	 height: 100%;
-}
- body {
-	 background: #c0c0c0;
-	 color: #000;
-	 font-family: 'Varela Round', sans-serif;
-	 line-height: 1.5;
-	 margin: 0;
-	 min-height: 100%;
-}
- input {
-	 background-image: none;
-	 border: none;
-	 font: inherit;
-	 margin: 0;
-	 padding: 0;
-	 transition: all 0.3s;
-}
-/* ---------- ALIGN ---------- */
- .align {
-	 align-items: center;
-	 display: flex;
-	 flex-direction: column;
-	 justify-content: center;
-}
-/* ---------- GRID ---------- */
- .grid {
-	 margin-left: auto;
-	 margin-right: auto;
-	 max-width: 90%;
-	 width: 400px;
-}
-/* ---------- LOGIN ---------- */
- #login h2 {
-	 background: #f95252;
-	 border-radius: 20px 20px 0 0;
-	 color: #fff;
-	 font-size: 28px;
-	 padding: 20px 26px;
-}
- #login h2 span[class*="fontawesome-"] {
-	 margin-right: 14px;
-}
- #login fieldset {
-	 background: #fff;
-	 border-radius: 0 0 20px 20px;
-	 padding: 20px 26px;
-}
- #login fieldset p {
-	 color: #777;
-	 margin-bottom: 14px;
-}
- #login fieldset p:last-child {
-	 margin-bottom: 0;
-}
- #login fieldset input {
-	 border-radius: 3px;
-}
- #login fieldset input[type="email"], #login fieldset input[type="password"] {
-	 background: #eee;
-	 color: #777;
-	 padding: 4px 10px;
-	 width: 100%;
-}
- #login fieldset input[type="submit"] {
-	 background: #3c7;
-	 color: #fff;
-	 display: block;
-	 margin: 0 auto;
-	 padding: 4px 0;
-	 width: 100px;
-}
- #login fieldset input[type="submit"]:hover {
-	 background: #28ad63;
-}
- 
+
 </style>
 </head>
-<body>
 
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./d.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <title>login</title>
+</head>
+<body>
+        <h1>ร้านค้าออนไลน์</h1>
+            <div class="info"><a  target="_blank"><p>เพราะเรา พร้อมที่จะดูแลคุณ<i class="fa fa-heart"></i></p></a></div>
+          
+        <div class="content">
+            <div class="container">
+                
+                <img width="1100px" class="bg-img" src="https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                
+                <div class="menu">
+                        <a href="#connexion" class="btn-connexion"><h2>SIGN IN</h2></a>
+                        <a href="#enregistrer" class="btn-enregistrer active"><h2>SIGN UP</h2></a>
+                    </div>
+                    <form action="./login.php" method="POST">
+                    <div class="connexion">
+                        <div class="contact-form">
+                            <label>USERNAME</label>
+                            <input placeholder="Username" name="Username" type="text">
+                            
+                            <label>PASSWORD</label>
+                            <input placeholder="Password" name="Password" type="text">
+                            
+                            <div class="check">
+                                <label>				
+                                    <input id="check" type="checkbox" class="checkbox">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26px" height="23px">
+                                            <path class="path-back"  d="M1.5,6.021V2.451C1.5,2.009,1.646,1.5,2.3,1.5h18.4c0.442,0,0.8,0.358,0.8,0.801v18.398c0,0.442-0.357,0.801-0.8,0.801H2.3c-0.442,0-0.8-0.358-0.8-0.801V6"/>
+                                            <path class="path-moving" d="M24.192,3.813L11.818,16.188L1.5,6.021V2.451C1.5,2.009,1.646,1.5,2.3,1.5h18.4c0.442,0,0.8,0.358,0.8,0.801v18.398c0,0.442-0.357,0.801-0.8,0.801H2.3c-0.442,0-0.8-0.358-0.8-0.801V6"/>
+                                        </svg>
+                                </label>
+                                <h3>Keep me signed in</h3>
+                            </div>
+                            
+                            <input class="submit" value="SIGN IN" type="submit">
+                        </div>
+                        
+                        <hr>
+                        <a href="#" target="_blank"><h4>Forgot password?</h4></a>
+                    </div>
+                    </form>
+					<form action="./register_upload.php" method="POST">
+                    <div class="enregistrer active-section">
+                        <div class="contact-form">
+                            <label>ชื่อ</label>
+                            <input name="fname" placeholder="" type="text">
+                            
+                            <label>นามสกุล</label>
+                            <input name="lname" placeholder="" type="text">	
+                            
+                            <label>Username</label>
+                            <input name="username" placeholder="" type="text">
+                            
+                            <label>Password</label>
+                            <input name="password" placeholder="" type="text">
+                            
+                            <div class="check">
+                                <label>				
+                                    <input id="check" type="checkbox" class="checkbox">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26px" height="23px">
+                                            <path class="path-back"  d="M1.5,6.021V2.451C1.5,2.009,1.646,1.5,2.3,1.5h18.4c0.442,0,0.8,0.358,0.8,0.801v18.398c0,0.442-0.357,0.801-0.8,0.801H2.3c-0.442,0-0.8-0.358-0.8-0.801V6"/>
+                                            <path class="path-moving" d="M24.192,3.813L11.818,16.188L1.5,6.021V2.451C1.5,2.009,1.646,1.5,2.3,1.5h18.4c0.442,0,0.8,0.358,0.8,0.801v18.398c0,0.442-0.357,0.801-0.8,0.801H2.3c-0.442,0-0.8-0.358-0.8-0.801V6"/>
+                                        </svg>
+                                </label>
+                                <h3>I agree</h3>
+                            </div>
+                            
+                            <input class="submit" value="SIGN UP" type="submit">	
+                                
+                        </div>
+                    </div>
+					</form>
+                    
+            </div>
+        
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script>
+        
+$('.btn-enregistrer').click(function() {
+  $('.connexion').addClass('remove-section');
+	$('.enregistrer').removeClass('active-section');
+  $('.btn-enregistrer').removeClass('active');
+  $('.btn-connexion').addClass('active');
+});
+
+$('.btn-connexion').click(function() {
+  $('.connexion').removeClass('remove-section');
+	$('.enregistrer').addClass('active-section');	
+  $('.btn-enregistrer').addClass('active');
+  $('.btn-connexion').removeClass('active');
+});
+
+
+        </script>
+</body>
+</html>
+
+
+<!-- 
 <body class="align">
 
   <div class="grid">
@@ -126,13 +144,13 @@
 
       </form>
 
-    </div> <!-- end login -->
+    </div> 
 
   </div>
 
 </body>	
-	
-</body>
+	 -->
+
 </html>
 
 

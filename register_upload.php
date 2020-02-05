@@ -3,13 +3,13 @@ include('./connect/BaseModel.php');
 
 $fname = $_POST['fname'];
 $lname	 = $_POST['lname'];
-$email = $_POST['email'];
+$username = $_POST['username'];
 $password = $_POST['password'];
-$tell = $_POST['tell'];
-$Userlevel = $_POST['Userlevel'];
 
-mysqli_query($conn,"INSERT INTO `user`(`fname`, `lname`, `email`, `password`, `tell`, `Userlevel`) VALUES 
-('$fname', '$lname', '$email', '$password', '$tell', '$Userlevel')");
+
+
+mysqli_query($conn,"INSERT INTO `user`(`fname`, `lname`, `username`, `password`, `Userlevel`) VALUES 
+('$fname', '$lname', '$username', '$password', 'M')");
 
 
 ?>
