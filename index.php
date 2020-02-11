@@ -72,6 +72,8 @@
                             
                             <label>Password</label>
                             <input name="password" placeholder="" type="text">
+                            <label>เบอร์</label>
+                            <input name="tell" placeholder="" type="text">
                             
                             <div class="check">
                                 <label>				
