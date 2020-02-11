@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2020 at 07:45 PM
+-- Generation Time: Feb 11, 2020 at 05:13 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -42,7 +42,7 @@ CREATE TABLE `total` (
 INSERT INTO `total` (`id`, `fname`, `price`, `files`) VALUES
 (58, 'apple iphone', 10090, './../../photo/3c5524bf28336411bde1695a91d94cca2.jfif'),
 (61, 'OPPO A5 20', 4900, './../../photo/3oppo_a5_2020-_black_6.png'),
-(62, 'VIVO V19', 4900, './../../photo/3vivo-1_y19-magnetic-black_2.png');
+(62, 'VIVO V19', 5000, './../../photo/3vivo-1_y19-magnetic-black_2.png');
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,9 @@ INSERT INTO `user` (`fname`, `lname`, `username`, `password`, `tell`, `Userlevel
 ('กิตติพงษ์', 'ปลิงกระโทก', 'admin', 'admin', '0848283681', 'A', 1),
 ('ddd', 'ddd', 'ddd', 'ddd', 'ddd', 'M', 4),
 ('mos', 'pling', 'mos@gmail.com', '1234', '08999999', 'M', 5),
-('กิตติพงษ์', 'ปลิงกระโทก', 'aaa', 'aaa', '', 'M', 6);
+('ddd', 'ddd', '', '', '', '', 34),
+('gg', 'gg', '', '', '', '', 38),
+('w', 'w', 'w', 'w', '', 'M', 39);
 
 --
 -- Indexes for dumped tables
@@ -94,13 +96,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `total`
 --
 ALTER TABLE `total`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
